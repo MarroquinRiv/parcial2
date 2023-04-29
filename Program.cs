@@ -71,9 +71,9 @@ class MainClass
         char[] dimensiones = { (char)5, (char)6, (char)7 };
 
         Console.WriteLine("Selecciona el área que deseas que tenga tu tablero:");
-        Console.WriteLine("\n1. Civil\nTablero 5x5 con intentos ilimitados." +
-            "\n\n2. Cabo\nTablero 6x6 con 15 intentos." +
-            "\n\n3. Almirante\nTablero 7x7 con 15 intentos.\n");
+        Console.WriteLine("\n1. Civil\nTablero 5x5." +
+            "\n\n2. Cabo\nTablero 6x6." +
+            "\n\n3. Almirante\nTablero 7x7.\n");
 
         var stringOint = Console.ReadLine();
         Console.WriteLine();
