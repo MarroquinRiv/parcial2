@@ -87,6 +87,7 @@ class MainClass
         char[,] tablero = new char[numDimensiones, numDimensiones];
         char[,] tableroTapado = new char[numDimensiones, numDimensiones];
 
+        //3. POSICIONES OCULTAS
         for (int i = 0; i < tableroTapado.GetLength(0); i++)
         {
             for (int x = 0; x < tableroTapado.GetLength(1); x++)
@@ -96,6 +97,7 @@ class MainClass
             }
         }
 
+        //3. COLOCAR BARCOS AL AZAR
         Random random = new Random();
         int dir = random.Next(0, 2);
 
@@ -129,6 +131,7 @@ class MainClass
             try
             {
                 drawBoard(tableroTapado);
+                //4. USUARIO ATACA POR MEDIO DE COORDENADAS
                 Console.Write("Ingresa la letra correspondiente a la fila:");
                 string columnaLetra = Console.ReadLine();
                 columnaLetra = columnaLetra.ToUpper();
@@ -163,6 +166,7 @@ class MainClass
                     f = 5;
                 }
 
+                //5. GOLPE O FALLA REVELA ESA POSICION DEL TABLERO Y SE ACTUALIZA POR BUCLE
                 if (tableroTapado[f, col] == '.')
                 {
                     intentos++;
@@ -193,8 +197,11 @@ class MainClass
             }
         }
         drawBoard(tableroTapado);
+        //6. MENSAJE DE GANADOR
         Console.WriteLine($"Ganaste a los {intentos} intentos con {puntos} puntos. Bien hecho, camarada.");
     }
+
+    //FUNCION PARA DIBUJAR TABLERO
     public static void drawBoard(char[,] arr)
     {
         Console.Clear();
